@@ -404,3 +404,398 @@ Azure ML Workspace
 > **The Identity configuration in Azure Machine Learning enables secure authentication between the workspace and other Azure services using managed identities instead of storing credentials.**
 
 ![](./media/ml10.png)
+
+## Create Workspace through ML Studio
+
+1. **ML Studio URL**
+   This is the Azure Machine Learning Studio (`ml.azure.com`) where you can manage and create ML resources directly via UI instead of the Azure Portal.
+
+2. **Workspaces**
+   Navigate to **Workspaces** from the left pane. This is where all your existing ML workspaces are listed and managed.
+
+3. **+ New**
+   Click **+ New** to initiate the creation of a new Azure ML workspace.
+
+4. **Name**
+   Provide a **unique workspace name** (e.g., `mlops-workspace`).
+   This is the actual resource name used internally in Azure.
+
+5. **Friendly Name**
+   A **display name** for easier identification (can include spaces).
+   This is mainly for readability in the UI and does not need to be unique.
+
+6. **Subscription**
+   Select the Azure **subscription** under which the workspace will be created.
+   This determines billing and resource ownership.
+
+7. **Resource Group (RG)**
+
+   * You can **select an existing Resource Group** (e.g., `demo`)
+   * Or click **Create new** to create a new one
+     Resource Groups help logically organize and manage related Azure resources.
+
+8. **Region**
+   Choose the **Azure region** (e.g., *East US 2*).
+   This defines where your resources are physically hosted.
+   👉 Best practice: Select a region close to your users or other dependent resources.
+
+9. **Hub (Optional)**
+   A **Hub** allows you to host the workspace in a **shared environment** with:
+
+   * Centralized governance
+   * Shared compute and resources
+   * Pre-configured security and policies
+     👉 If not required for your lab, you can leave this empty.
+
+10. **Create**
+    Click **Create** to provision the workspace with the selected configuration.
+
+    ![](./media/ml12.png)
+
+### AML Workspace
+
+Now we are in the workspace that we have created:
+
+![](./media/ml11.png)
+
+#### **1. Generative AI with Prompt flow**
+
+This section provides **prebuilt templates and tools to create, test, and deploy AI applications** using large language models (LLMs).
+
+#### What it is
+
+* A **low-code / visual development environment** for building GenAI apps
+* Lets you design workflows (called *flows*) that combine:
+
+  * Prompts
+  * LLMs
+  * Data sources
+  * Logic (conditions, chaining, etc.)
+
+#### What you can do here
+
+* Create chatbots or Q&A systems
+* Connect your own data (PDFs, databases, etc.)
+* Test prompts and evaluate responses
+* Deploy flows as APIs
+
+#### How it works (simple explanation)
+
+Think of it like:
+
+> “A pipeline where input → prompt → AI model → output”
+
+You define how data flows between steps visually.
+
+#### Example
+
+**Use case: Company FAQ chatbot**
+
+* You upload company documents
+* Use **“Q&A on Your Data”**
+* Prompt flow connects:
+
+  * User question → Search documents → Send context to LLM → Generate answer
+
+  >Result: A chatbot that answers based on your company data, not just general knowledge
+
+#### **2. Generative AI models**
+
+This section shows the **actual AI models** available in your workspace that you can use in Prompt flow or other applications.
+
+#### What it is
+
+* A catalog of **pretrained foundation models**
+* These models are ready to use via APIs or integrated into flows
+
+#### Types of models you’ll see
+
+* Chat models (for conversations)
+* Completion models (text generation)
+* Specialized models (summarization, classification, etc.)
+
+Examples from your screen:
+
+* **Mistral-7B-Instruct** → lightweight chat model
+* **Domyn-Large** → more powerful model
+* **NVIDIA Nemotron** → advanced enterprise model
+
+#### What these models do
+
+They are the **“brains”** behind your AI application.
+
+Without them:
+
+* Prompt flow = structure only
+* Models = intelligence
+
+Together → complete AI solution
+
+Now we are in the workspace that we have created:
+
+![](./media/ml11.png)
+
+![](./media/ml13.png)
+
+#### **3. Notebook samples**
+
+This section provides **ready-to-use sample notebooks** to help you quickly get started with common ML and AI scenarios.
+
+#### What it is
+
+* A collection of **prebuilt Jupyter notebooks**
+* Covers common use cases like training models, GPT-based apps, and GPU workloads
+
+#### What you can do here
+
+* Learn by running guided examples
+* Train and deploy models step-by-step
+* Explore GenAI scenarios like indexing and search
+* Understand distributed and GPU-based training
+
+#### How it works (simple explanation)
+
+Preconfigured notebooks with code, instructions, and environment setup are provided so you can execute them directly without building everything from scratch.
+
+#### Example
+
+**Use case: Train and deploy a model**
+
+* Select **“Train and deploy a model”**
+* Run the notebook cells step-by-step
+* Model gets trained and deployed
+
+> Result: A working ML model with minimal setup effort
+
+#### **4. Shortcuts**
+
+This section provides **quick access actions** to commonly used workspace operations.
+
+#### How it works (simple explanation)
+
+Instead of navigating through multiple menus, shortcuts allow you to directly start essential tasks from the workspace home.
+
+#### **5. Compute instances**
+
+This section is used to **create and manage compute resources** required to run notebooks, training jobs, and experiments.
+
+#### What it is
+
+* A **managed virtual machine** dedicated to your development work in Azure ML
+
+#### What you can do here
+
+* Create a compute instance
+* Run notebooks and scripts
+* Install libraries and dependencies
+* Execute ML training workloads
+
+#### How it works (simple explanation)
+
+You create a compute instance, and it acts like your personal cloud machine where all development and execution happens.
+
+#### Example
+
+**Use case: Run a notebook**
+
+* Create a compute instance
+* Attach it to a notebook
+* Run code directly on that machine
+
+> Result: Scalable execution without relying on local system resources
+
+### Notebook
+
+1. A notebook in Azure Machine Learning is an interactive environment (Jupyter notebook) used to write and run code, visualize results, and document experiments in one place. It is mainly used for data exploration, model training, and testing machine learning workflows. You can execute code step-by-step, making it easy to debug and iterate. For example, you can load a dataset, clean it, train a model, and visualize performance metrics—all within the same notebook. It runs on a compute instance, so you don’t rely on your local machine and can scale resources as needed.
+
+        ![](./media/ml14.png)
+
+### Automated ML
+
+1. Automated ML in Azure Machine Learning is used to automatically build, train, and select the best machine learning model based on your data without requiring manual coding or deep ML expertise. It simplifies the end-to-end process by trying multiple algorithms, tuning hyperparameters, and evaluating performance to identify the optimal model. This is especially useful for users who want quick results or are new to ML. For example, you can upload a dataset (like sales data), select a target column, and Automated ML will generate and recommend the best model for predicting future sales.
+
+ ![](./media/ml15.png)
+
+### Designer
+
+1. The **Designer** in Azure Machine Learning is a **low-code, drag-and-drop interface** used to build machine learning pipelines visually without writing extensive code. It allows you to connect components like data input, preprocessing, training, and evaluation into a workflow (pipeline). You can use **prebuilt (classic)** components for quick development or create **custom pipelines** for more flexibility. Pipelines help automate and standardize ML processes. For example, you can drag a dataset → add a data cleaning step → train a model → evaluate results, all visually. Once created, pipelines can be saved as drafts or executed as jobs for repeatable ML workflows.
+
+ ![](./media/ml16.png)
+
+### Prompt-flow
+
+Prompt flow in Azure Machine Learning is used to **build, manage, and evaluate generative AI workflows (flows)** using large language models. It provides a structured way to design how prompts, models, and data interact.
+
+* **Flows**: Create and manage prompt-based workflows (e.g., chatbot, Q&A system)
+* **Runs**: View execution history and results of flows
+* **Connections**: Manage external resources (e.g., OpenAI, data sources)
+* **Runtime**: Configure compute/environment used to run flows
+* **Vector index**: Store and search embeddings for retrieval-based scenarios
+
+For example, you can create a flow where a user question → searches documents via vector index → sends context to an LLM → generates an accurate answer.
+
+ ![](./media/ml17.png)
+
+### Data
+
+The **Data** section in Azure Machine Learning is used to **manage and organize datasets** required for ML workflows.
+
+* **Data assets**: These are **registered datasets** (files, folders, tables) that you can version, reuse, and share across experiments. Instead of hardcoding paths, you reference data assets, making workflows consistent and reproducible.
+
+ ![](./media/ml18.png)
+
+* **Datastores**: These are **connections to storage services** (like Azure Blob Storage, Data Lake) where your actual data is stored. They act as a secure bridge between your workspace and storage.
+
+ ![](./media/ml19.png)
+
+For example, you can register a CSV file as a **data asset** and use it in training, while the file itself resides in a datastore like Blob Storage.
+
+#### Datastore 
+The **Datastores** section in Azure Machine Learning is used to **securely connect your workspace to underlying storage services** like Azure Blob Storage or File Shares, where your actual data is stored.
+
+* These act as a **bridge between your workspace and storage**, so you don’t need to hardcode credentials or paths in your code
+* Default datastores are automatically created with the workspace
+
+For example, when you upload a dataset or run training, the data is stored in the blob datastore, and your ML jobs access it securely through these datastore connections.
+
+### Jobs
+
+The **Jobs** section in Azure Machine Learning is used to **track, manage, and monitor all ML executions (runs)** such as training, testing, or pipeline runs.
+
+* **All experiments**: Groups related runs together for better organization
+* **All jobs**: Shows individual executions with status, logs, and results
+* **All schedules**: Manages recurring or scheduled runs
+
+It helps you monitor progress, debug issues, and compare results across runs.
+
+For example, when you train a model multiple times with different parameters, each run is logged as a job, allowing you to track performance and identify the best model.
+
+### Components
+
+The **Components** section in Azure Machine Learning is used to create and manage **reusable building blocks** for ML workflows.
+
+* Components represent **individual steps** like data preprocessing, model training, or evaluation
+* Each component has defined **inputs, outputs, parameters, and environment**
+* They can be reused across multiple pipelines, ensuring consistency and reducing duplication
+ 
+ ![](./media/ml21.png)
+
+This helps in modularizing ML workflows and making them easier to maintain and scale.
+
+For example, you can create a data cleaning component once and reuse it in multiple pipelines instead of rewriting the same code each time.
+
+### Pipelines
+
+The **Pipelines** section in Azure Machine Learning is used to **create, manage, and run end-to-end ML workflows** by combining multiple steps into a single automated process.
+
+* **Pipeline jobs**: View and track executed pipeline runs
+* **Pipeline endpoints**: Deploy pipelines as reusable APIs for repeated execution
+* **Pipeline drafts**: Save and edit pipelines before running them
+
+Pipelines help automate tasks like data preparation, training, and evaluation in a structured and repeatable way.
+
+For example, you can build a pipeline where data ingestion → preprocessing → model training → evaluation runs automatically every time new data is available.
+
+![](./media/ml22.png)
+
+### Environments
+
+The **Environments** section in Azure Machine Learning is used to **define and manage the runtime setup** required to run ML code, including libraries, dependencies, and system configurations.
+
+* **Curated environments**: Prebuilt, Microsoft-managed environments with commonly used libraries (e.g., Python, ML frameworks). These are ready to use and optimized for faster execution.
+* **Custom environments**: User-defined environments where you can specify your own packages, versions, and configurations using Docker or conda.
+
+Environments ensure consistency and reproducibility across experiments and pipelines.
+
+For example, if your model requires specific versions of Python and libraries like scikit-learn, you can define an environment once and reuse it across multiple training jobs.
+
+![](./media/ml23.png)
+
+### Models
+
+The **Models** section in Azure Machine Learning is used to **register, manage, and version machine learning models**.
+
+* It stores trained models in a centralized place
+* Supports **versioning**, so multiple iterations of the same model can be tracked
+* Allows adding metadata (tags, descriptions) for better organization
+
+This helps in managing the lifecycle of models from training to deployment.
+
+For example, after training a model, you can register it here as version 1. If you retrain with better accuracy, you register it as version 2 and compare both before deploying the best one.
+
+![](./media/ml24.png)
+
+### Endpoints
+
+The **Endpoints** section in Azure Machine Learning is used to **deploy trained models and make them accessible for predictions (inference)**.
+
+* **Real-time endpoints**: Used for **instant predictions** via APIs (low latency)
+* **Batch endpoints**: Used for processing **large volumes of data in bulk**
+* **Azure OpenAI**: Access and manage OpenAI models for generative AI use cases
+* **Serverless endpoints**: Deploy models without managing infrastructure
+
+Endpoints allow you to integrate ML models into applications.
+
+For example, a real-time endpoint can be used in a web app to instantly predict loan approval, while a batch endpoint can process thousands of records overnight.
+
+![](./media/ml25.png)
+
+### Compute
+
+The **Compute** section in Azure Machine Learning is used to **create and manage the infrastructure required to run ML workloads** such as notebooks, training jobs, and deployments.
+
+* **Compute instances**: Personal development VMs for running notebooks and code
+* **Compute clusters**: Scalable clusters for training jobs (auto-scale up/down)
+* **Kubernetes clusters**: Used for deploying models in production (AKS-based)
+* **Attached computes**: External compute resources linked to the workspace
+* **Serverless instances**: Run workloads without managing infrastructure
+
+Compute provides the processing power (CPU/GPU) needed for ML tasks.
+
+For example, you can use a compute instance for development and a compute cluster to train models on large datasets efficiently.
+
+![](./media/ml26.png)
+
+### Monitoring
+
+The **Monitoring** section in Azure Machine Learning is used to **track and analyze model performance after deployment (in production)**.
+
+* Monitors metrics like accuracy, latency, and usage
+* Detects issues such as **data drift** and **prediction drift**
+* Helps ensure models continue to perform as expected over time
+* Can trigger alerts when performance degrades
+
+This is essential for maintaining reliable and trustworthy ML systems in real-world scenarios.
+
+For example, if a fraud detection model starts receiving new types of transactions and accuracy drops, monitoring will detect the drift and alert you to retrain the model.
+
+![](./media/ml27.png)
+
+### Data labeling
+
+The **Data Labeling** section in Azure Machine Learning is used to **annotate datasets with labels required for training supervised machine learning models**.
+
+* Supports tasks like **image classification, object detection, and text labeling**
+* Allows multiple users to collaborate on labeling projects
+* Helps improve dataset quality and model accuracy
+* Can use ML-assisted labeling to speed up the process
+
+Labeling is essential because models learn from labeled data.
+
+For example, in an image classification project, you can label images as “cat” or “dog,” which is then used to train a model to automatically classify new images.
+
+![](./media/ml28.png)
+
+### Connections
+
+The **Connections** section in Azure Machine Learning is used to **securely connect your workspace to external resources and services** such as storage accounts, APIs, or other Azure services.
+
+* Stores **connection details and authentication methods** (e.g., SAS, account key)
+* Eliminates the need to hardcode credentials in code or pipelines
+* Enables seamless integration with data sources and services
+
+These connections are used across workflows like data access, model training, and deployments.
+
+For example, you can create a connection to an Azure Blob Storage account and use it in your pipelines or notebooks to read/write data securely without exposing credentials.
+
+![](./media/ml29.png)
