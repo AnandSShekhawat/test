@@ -608,19 +608,19 @@ You create a compute instance, and it acts like your personal cloud machine wher
 
 1. A notebook in Azure Machine Learning is an interactive environment (Jupyter notebook) used to write and run code, visualize results, and document experiments in one place. It is mainly used for data exploration, model training, and testing machine learning workflows. You can execute code step-by-step, making it easy to debug and iterate. For example, you can load a dataset, clean it, train a model, and visualize performance metrics—all within the same notebook. It runs on a compute instance, so you don’t rely on your local machine and can scale resources as needed.
 
-        ![](./media/ml14.png)
+   ![](./media/ml14.png)
 
 ### Automated ML
 
 1. Automated ML in Azure Machine Learning is used to automatically build, train, and select the best machine learning model based on your data without requiring manual coding or deep ML expertise. It simplifies the end-to-end process by trying multiple algorithms, tuning hyperparameters, and evaluating performance to identify the optimal model. This is especially useful for users who want quick results or are new to ML. For example, you can upload a dataset (like sales data), select a target column, and Automated ML will generate and recommend the best model for predicting future sales.
 
- ![](./media/ml15.png)
+   ![](./media/ml15.png)
 
 ### Designer
 
 1. The **Designer** in Azure Machine Learning is a **low-code, drag-and-drop interface** used to build machine learning pipelines visually without writing extensive code. It allows you to connect components like data input, preprocessing, training, and evaluation into a workflow (pipeline). You can use **prebuilt (classic)** components for quick development or create **custom pipelines** for more flexibility. Pipelines help automate and standardize ML processes. For example, you can drag a dataset → add a data cleaning step → train a model → evaluate results, all visually. Once created, pipelines can be saved as drafts or executed as jobs for repeatable ML workflows.
 
- ![](./media/ml16.png)
+   ![](./media/ml16.png)
 
 ### Prompt-flow
 
